@@ -6,12 +6,11 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 13:00:09 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/04 15:24:27 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/04 18:01:52 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static unsigned int		ft_counts_words(char const *s, char c)
 {
@@ -83,19 +82,4 @@ char					**ft_strsplit(char const *s, char c)
 		}
 	}
 	return (array);
-}
-
-int	main(void)
-{
-	char **matrix;
-	unsigned int i = 0;
-	char *s = "split  ||this|for|me|||||!|";
-	char c = '|';
-	matrix = ft_strsplit(s, c);
-	while (matrix[i] != NULL)
-	{
-		printf("%s", matrix[i]);
-		i++;
-	}
-	return (0);
 }
