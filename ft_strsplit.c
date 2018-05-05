@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 13:00:09 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/04 18:01:52 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/04 21:30:01 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,9 @@ char					**ft_strsplit(char const *s, char c)
 	j = 0;
 	i = 0;
 	word_count = ft_counts_words(s, c);
-	if ((array = (char **)malloc(word_count + 1)) == NULL)
+	if (!(array = (char **)malloc(sizeof(char *) * (word_count + 1))))
 		return (NULL);
-	array[word_count] = NULL;
-	while (s[i])
+	while (j < word_count)
 	{
 		if (s[i] == c)
 			i++;
@@ -81,5 +80,6 @@ char					**ft_strsplit(char const *s, char c)
 				i++;
 		}
 	}
+	array[j] = NULL;
 	return (array);
 }

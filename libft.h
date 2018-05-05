@@ -6,12 +6,14 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 21:00:09 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/01 19:18:21 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/05 00:50:01 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define FELIX char *str; unsigned int i = ft_spacecount(n) - 1;
 
 # include <string.h>
 # include <unistd.h>
