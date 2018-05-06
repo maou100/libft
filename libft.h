@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 21:00:09 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/05 00:50:01 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/05 20:03:16 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strdup(const char *src);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
-int					ft_strlen(const char *s);
+size_t				ft_strlen(const char *s);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strncpy(char *dst, const char *src, size_t len);

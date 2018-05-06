@@ -6,13 +6,15 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 14:31:27 by feedme            #+#    #+#             */
-/*   Updated: 2018/04/20 20:49:29 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/05 20:01:28 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(const char *s)
+#include "libft.h"
+
+size_t		ft_strlen(const char *s)
 {
-	int		len;
+	size_t	len;
 
 	len = 0;
 	while (s[len])
