@@ -6,7 +6,7 @@
 #    By: feedme <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/21 21:23:48 by feedme            #+#    #+#              #
-#    Updated: 2018/05/01 15:35:55 by feedme           ###   ########.fr        #
+#    Updated: 2018/05/05 18:06:21 by feedme           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,12 @@ SRC = ft_atoi.c \
 	  ft_strsplit.c \
 	  ft_strsub.c \
 	  ft_strtrim.c \
+	  ft_lstnew.c \
+	  ft_lstdelone.c \
+	  ft_lstdel.c \
+	  ft_lstadd.c \
+	  ft_lstiter.c \
+	  ft_lstmap.c \
 
 BINARIES = $(SRC:.c=.o)
 

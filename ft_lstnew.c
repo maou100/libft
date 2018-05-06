@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/01 14:56:19 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/01 15:44:54 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/05 14:46:47 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*new;
 
-	if ((new = (t_list *)malloc(sizeof(t_list))) == NULL)
+	if ((new = (t_list *)malloc(sizeof(*new))) == NULL)
 		return (NULL);
 	if (content == NULL)
 	{

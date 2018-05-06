@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/01 18:49:20 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/03 01:28:38 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/05 14:55:21 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	t_list	*next;
-
-	while (lst)
-	{
-		next = lst->next;
-		f(lst);
-		lst = next;
-	}
+	if (lst == NULL)
+		return ;
+	if (lst->next != NULL)
+		ft_lstiter(lst->next, f);
+	f(lst);
 }

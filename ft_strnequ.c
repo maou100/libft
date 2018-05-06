@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:53:12 by feedme            #+#    #+#             */
-/*   Updated: 2018/04/23 15:59:31 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/05 19:16:50 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (s1[0] == 0 && s2[0] == 0)
+	if (s1 == NULL && s2 == NULL)
 		return (1);
-	if (s1[0] == 0 || s2[0] == 0)
+	if (s1 == NULL || s2 == NULL)
 		return (0);
 	while (s1[i] && i < n)
 	{
@@ -27,8 +27,5 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 			return (0);
 		i++;
 	}
-	if (s2[i] != '\0')
-		return (0);
-	else
-		return (1);
+	return (1);
 }
