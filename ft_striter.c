@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 14:47:51 by feedme            #+#    #+#             */
-/*   Updated: 2018/04/23 15:01:45 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/05 20:13:12 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_striter(char *s, void (*f)(char *))
 	unsigned int	i;
 
 	i = 0;
+	if (s == NULL || f == NULL)
+		return ;
 	while (s[i])
 	{
 		f(s + i);

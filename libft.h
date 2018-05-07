@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 21:00:09 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/05 20:03:16 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/06 22:51:28 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # define FELIX char *str; unsigned int i = ft_spacecount(n) - 1;
+# define FELIX1 char **array; unsigned int i = 0; unsigned int j = 0;
 
 # include <string.h>
 # include <unistd.h>

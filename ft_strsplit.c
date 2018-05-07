@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 13:00:09 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/04 21:30:01 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/06 22:52:32 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char				*ft_putword(char const *s, char c, unsigned int i)
 	x = 0;
 	size = 0;
 	i0 = i;
-	while (s[i] != c)
+	while (s[i] != c && s[i])
 	{
 		i++;
 		size++;
@@ -58,15 +58,13 @@ static char				*ft_putword(char const *s, char c, unsigned int i)
 
 char					**ft_strsplit(char const *s, char c)
 {
-	char			**array;
-	unsigned int	i;
-	unsigned int	j;
 	unsigned int	word_count;
 
-	j = 0;
-	i = 0;
+	FELIX1;
+	if (s == NULL)
+		return (NULL);
 	word_count = ft_counts_words(s, c);
-	if (!(array = (char **)malloc(sizeof(char *) * (word_count + 1))))
+	if ((array = (char **)malloc(sizeof(char *) * (word_count + 1))) == NULL)
 		return (NULL);
 	while (j < word_count)
 	{

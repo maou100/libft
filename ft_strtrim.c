@@ -6,19 +6,37 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 19:48:13 by feedme            #+#    #+#             */
-/*   Updated: 2018/04/30 19:58:40 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/06 18:50:02 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static char	*ft_helper(unsigned int beginning, unsigned int end, char const *s)
+{
+	unsigned int	i;
+	char			*trimmed;
+
+	i = -1;
+	if ((trimmed = (char *)malloc((end - beginning) + 1)) == NULL)
+		return (NULL);
+	while (beginning <= end)
+	{
+		trimmed[++i] = s[beginning];
+		beginning++;
+	}
+	trimmed[i] = '\0';
+	return (trimmed);
+}
+
+char		*ft_strtrim(char const *s)
 {
 	unsigned int	i;
 	unsigned int	beginning;
 	unsigned int	end;
-	char			*trimmed;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
@@ -29,14 +47,5 @@ char	*ft_strtrim(char const *s)
 		i--;
 	i++;
 	end = i;
-	if ((trimmed = (char *)malloc((end - beginning) + 1)) == NULL)
-		return (NULL);
-	i = -1;
-	while (beginning <= end)
-	{
-		trimmed[++i] = s[beginning];
-		beginning++;
-	}
-	trimmed[i] = '\0';
-	return (trimmed);
+	return (ft_helper(beginning, end, s));
 }

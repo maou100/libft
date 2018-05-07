@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 14:37:14 by feedme            #+#    #+#             */
-/*   Updated: 2018/04/24 19:43:28 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/05 20:07:45 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void **)as);
+	if (as == NULL)
+		return ;
+	free(*as);
+	*as = NULL;
 }

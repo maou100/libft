@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:25:12 by feedme            #+#    #+#             */
-/*   Updated: 2018/04/23 15:35:15 by feedme           ###   ########.fr       */
+/*   Updated: 2018/05/05 20:18:10 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	unsigned int	i;
 
 	i = 0;
-	map = (char *)malloc(ft_strlen(s) + 1);
-	if (map == NULL)
+	if (s == NULL || f == NULL)
+		return (NULL);
+	if ((map = (char *)malloc(ft_strlen(s) + 1)) == NULL)
 		return (NULL);
 	while (s[i])
 	{
