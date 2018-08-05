@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/01 14:56:19 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/23 16:31:03 by feedme           ###   ########.fr       */
+/*   Created: 2018/05/07 12:56:59 by feedme            #+#    #+#             */
+/*   Updated: 2018/05/07 12:58:08 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+void	ft_swap(int *a, int *b)
 {
-	t_list	*new;
+	int		c;
 
-	if ((new = (t_list *)malloc(sizeof(*new))) == NULL)
-		return (NULL);
-	if (content == NULL)
-	{
-		new->content = NULL;
-		new->content_size = 0;
-	}
-	else
-	{
-		if ((new->content = malloc(content_size)) == NULL)
-			return (NULL);
-		ft_memcpy(new->content, content, content_size);
-		new->content_size = content_size;
-	}
-	new->next = NULL;
-	return (new);
+	c = *a;
+	*a = *b;
+	*b = c;
 }

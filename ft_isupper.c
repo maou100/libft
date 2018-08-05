@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/01 14:56:19 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/23 16:31:03 by feedme           ###   ########.fr       */
+/*   Created: 2018/05/07 13:10:59 by feedme            #+#    #+#             */
+/*   Updated: 2018/05/07 13:15:06 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+int		ft_isupper(int c)
 {
-	t_list	*new;
-
-	if ((new = (t_list *)malloc(sizeof(*new))) == NULL)
-		return (NULL);
-	if (content == NULL)
-	{
-		new->content = NULL;
-		new->content_size = 0;
-	}
+	if (c >= 65 && c <= 90)
+		return (1);
 	else
-	{
-		if ((new->content = malloc(content_size)) == NULL)
-			return (NULL);
-		ft_memcpy(new->content, content, content_size);
-		new->content_size = content_size;
-	}
-	new->next = NULL;
-	return (new);
+		return (0);
 }

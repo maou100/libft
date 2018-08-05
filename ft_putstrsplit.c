@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putstrsplit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/01 14:56:19 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/23 16:31:03 by feedme           ###   ########.fr       */
+/*   Created: 2018/05/07 13:24:53 by feedme            #+#    #+#             */
+/*   Updated: 2018/05/07 13:28:42 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+void	ft_putstrsplit(char *s, char c)
 {
-	t_list	*new;
-
-	if ((new = (t_list *)malloc(sizeof(*new))) == NULL)
-		return (NULL);
-	if (content == NULL)
-	{
-		new->content = NULL;
-		new->content_size = 0;
-	}
-	else
-	{
-		if ((new->content = malloc(content_size)) == NULL)
-			return (NULL);
-		ft_memcpy(new->content, content, content_size);
-		new->content_size = content_size;
-	}
-	new->next = NULL;
-	return (new);
+	ft_putarray(ft_strsplit(s, c));
 }

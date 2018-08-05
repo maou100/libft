@@ -6,7 +6,7 @@
 #    By: feedme <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/21 21:23:48 by feedme            #+#    #+#              #
-#    Updated: 2018/05/05 18:06:21 by feedme           ###   ########.fr        #
+#    Updated: 2018/07/25 14:10:50 by feedme           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,12 @@ SRC = ft_atoi.c \
 	  ft_lstadd.c \
 	  ft_lstiter.c \
 	  ft_lstmap.c \
+	  ft_swap.c \
+	  ft_putarray.c \
+	  ft_isupper.c \
+	  ft_islower.c \
+	  ft_putstrsplit.c \
+	  get_next_line.c \
 
 BINARIES = $(SRC:.c=.o)
 
@@ -78,7 +84,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): libft.h
-	gcc $(FLAGS) -c $(SRC) -I libft.h
+	gcc $(FLAGS) -c $(SRC) -I libft.h get_next_line.h
 	ar rc $(NAME) $(BINARIES)
 	ranlib $(NAME)
 

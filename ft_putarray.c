@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putarray.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/01 14:56:19 by feedme            #+#    #+#             */
-/*   Updated: 2018/05/23 16:31:03 by feedme           ###   ########.fr       */
+/*   Created: 2018/05/07 13:02:51 by feedme            #+#    #+#             */
+/*   Updated: 2018/06/06 22:52:24 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+void	ft_putarray(char **array)
 {
-	t_list	*new;
+	char			**cpy;
+	unsigned int	i;
 
-	if ((new = (t_list *)malloc(sizeof(*new))) == NULL)
-		return (NULL);
-	if (content == NULL)
+	i = 0;
+	cpy = &array[i];
+	while (array[i])
 	{
-		new->content = NULL;
-		new->content_size = 0;
+		ft_putstr(array[i]);
+		ft_putchar('\n');
+		i++;
 	}
-	else
-	{
-		if ((new->content = malloc(content_size)) == NULL)
-			return (NULL);
-		ft_memcpy(new->content, content, content_size);
-		new->content_size = content_size;
-	}
-	new->next = NULL;
-	return (new);
 }
