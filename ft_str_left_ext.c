@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_str_left_ext.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 14:37:14 by feedme            #+#    #+#             */
-/*   Updated: 2019/04/28 18:10:03 by feedme           ###   ########.fr       */
+/*   Created: 2018/10/18 22:09:40 by feedme            #+#    #+#             */
+/*   Updated: 2018/10/18 23:31:59 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char		*ft_str_left_ext(char *str, int extension)
 {
+	char	*tmp;
 	int		i;
+	int		len;
 
+	len = ft_strlen(str) + extension;
 	i = 0;
-	if (as == NULL)
-		return ;
-	while (*as[i])
+	IF_NULL((tmp = ft_strnew(len)), NULL);
+	ft_bzero(tmp, len);
+	while ((extension + i) < len)
 	{
-		*as[i] = 0;
+		tmp[extension + i] = str[i];
 		i++;
 	}
-	free(*as);
-	*as = NULL;
+	return (tmp);
 }

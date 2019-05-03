@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_powof2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 14:37:14 by feedme            #+#    #+#             */
-/*   Updated: 2019/04/28 18:10:03 by feedme           ###   ########.fr       */
+/*   Created: 2019/04/28 18:05:13 by feedme            #+#    #+#             */
+/*   Updated: 2019/04/28 18:05:40 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+int		ft_powof2(int pow)
 {
-	int		i;
+	int		res;
 
-	i = 0;
-	if (as == NULL)
-		return ;
-	while (*as[i])
-	{
-		*as[i] = 0;
-		i++;
-	}
-	free(*as);
-	*as = NULL;
+	res = 1;
+	while (--pow > -1)
+		res *= 2;
+	return (res);
 }

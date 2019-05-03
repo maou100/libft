@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_exit_msg.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 14:37:14 by feedme            #+#    #+#             */
-/*   Updated: 2019/04/28 18:10:03 by feedme           ###   ########.fr       */
+/*   Created: 2018/09/17 16:03:02 by feedme            #+#    #+#             */
+/*   Updated: 2018/12/10 00:28:13 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	ft_exit_msg(char *str)
 {
-	int		i;
-
-	i = 0;
-	if (as == NULL)
-		return ;
-	while (*as[i])
-	{
-		*as[i] = 0;
-		i++;
-	}
-	free(*as);
-	*as = NULL;
+	ft_putstr_fd(str, 2);
+	exit(0);
 }

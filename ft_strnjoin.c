@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 14:37:14 by feedme            #+#    #+#             */
-/*   Updated: 2019/04/28 18:10:03 by feedme           ###   ########.fr       */
+/*   Created: 2018/12/05 23:35:01 by feedme            #+#    #+#             */
+/*   Updated: 2019/04/28 18:10:35 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strnjoin(char const *s1, char const *s2, int n)
 {
-	int		i;
+	char			*fusion;
+	int				i;
+	unsigned int	j;
 
 	i = 0;
-	if (as == NULL)
-		return ;
-	while (*as[i])
+	j = 0;
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	if ((fusion = (char *)malloc(n + ft_strlen(s2) + 1)) == NULL)
+		return (NULL);
+	while (i < n)
 	{
-		*as[i] = 0;
+		fusion[i] = s1[i];
 		i++;
 	}
-	free(*as);
-	*as = NULL;
+	while (s2[j])
+	{
+		fusion[i + j] = s2[j];
+		j++;
+	}
+	fusion[i + j] = '\0';
+	return (fusion);
 }

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 14:37:14 by feedme            #+#    #+#             */
-/*   Updated: 2019/04/28 18:10:03 by feedme           ###   ########.fr       */
+/*   Created: 2018/10/17 17:56:14 by feedme            #+#    #+#             */
+/*   Updated: 2018/10/17 18:03:15 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strrev(char *str)
 {
+	int		len;
+	char	*new;
 	int		i;
 
-	i = 0;
-	if (as == NULL)
-		return ;
-	while (*as[i])
-	{
-		*as[i] = 0;
-		i++;
-	}
-	free(*as);
-	*as = NULL;
+	i = -1;
+	len = ft_strlen(str);
+	if (!(new = (char*)malloc(len + 1)))
+		ft_exit_msg("malloc failed\n");
+	while (--len >= 0)
+		new[++i] = str[len];
+	new[++i] = '\0';
+	free(str);
+	return (new);
 }

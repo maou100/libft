@@ -6,7 +6,7 @@
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 21:00:09 by feedme            #+#    #+#             */
-/*   Updated: 2018/07/25 14:53:56 by feedme           ###   ########.fr       */
+/*   Updated: 2019/05/01 17:09:37 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 
 # define FELIX char *str; unsigned int i = ft_spacecount(n) - 1;
 # define FELIX1 char **array; unsigned int i = 0; unsigned int j = 0;
+
+# define IF_NULL(x, y) if (!x) return (y)
+# define IF_RET(x, y) if (x) return (y)
+# define IF_NULL_X(x) if (!x) exit(0)
+# define IF_X(x) if (x) exit(0)
+
+# define FREE(x) if (x) free(x); x = NULL;
+
+# define IS_LOW(x) (x >= 'a' && x <= 'z')
+# define IS_UPP(x) (x >= 'A' && x <= 'Z')
+# define IS_DIGIT(x) (x >= '0' && x <= '9')
 
 # include <string.h>
 # include <unistd.h>
@@ -30,6 +41,22 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+char				*ft_memjoin(char const *s1, char const *s2, unsigned int len1, unsigned int len2);
+void				*ft_memrev(void *dst, const void *src, int n);
+int					ft_powof2(int pow);
+int					ft_isempty(char *line);
+char				*ft_strnjoin(char const *s1, char const *s2, int n);
+int					first_c_from_end(char *str, char c);
+char				**ft_mapdup(char **map);
+char				**ft_create_map(int line_c, int col_c, char c);
+char				*ft_shift_left(char *str, int dist);
+char				*ft_shift_right_careful(char *str, int dist);
+char				*ft_str_left_ext(char *str, int extension);
+char				*ft_strrev(char *str);
+void				ft_str_swap(char **s1, char **s2);
+int					get_next_line(int fd, char **line);
+void				ft_exit_msg(char *str);
+char				*ft_strndup(const char *src, int n);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 int					ft_isalnum(int c);

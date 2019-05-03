@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_shift_left.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 14:37:14 by feedme            #+#    #+#             */
-/*   Updated: 2019/04/28 18:10:03 by feedme           ###   ########.fr       */
+/*   Created: 2018/10/18 22:43:52 by feedme            #+#    #+#             */
+/*   Updated: 2018/10/18 23:30:30 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_shift_left(char *str, int dist)
 {
 	int		i;
+	int		dist_tmp;
 
-	i = 0;
-	if (as == NULL)
-		return ;
-	while (*as[i])
-	{
-		*as[i] = 0;
-		i++;
-	}
-	free(*as);
-	*as = NULL;
+	dist_tmp = dist;
+	i = -1;
+	dist--;
+	while (str[++dist])
+		str[++i] = str[dist];
+	while (--dist_tmp >= 0)
+		str[++i] = '\0';
+	return (str);
 }

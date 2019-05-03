@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_first_c_from_end.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 14:37:14 by feedme            #+#    #+#             */
-/*   Updated: 2019/04/28 18:10:03 by feedme           ###   ########.fr       */
+/*   Created: 2018/12/05 20:39:46 by feedme            #+#    #+#             */
+/*   Updated: 2019/04/28 18:06:44 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+int		ft_first_c_from_end(char *str, char c)
 {
-	int		i;
+	int		len;
 
-	i = 0;
-	if (as == NULL)
-		return ;
-	while (*as[i])
+	len = ft_strlen(str);
+	while (--len > -1)
 	{
-		*as[i] = 0;
-		i++;
+		if (str[len] == c)
+			return (len);
 	}
-	free(*as);
-	*as = NULL;
+	return (-1);
 }

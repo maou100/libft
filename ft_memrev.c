@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_memrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feedme <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 14:37:14 by feedme            #+#    #+#             */
-/*   Updated: 2019/04/28 18:10:03 by feedme           ###   ########.fr       */
+/*   Created: 2019/04/29 16:49:33 by feedme            #+#    #+#             */
+/*   Updated: 2019/04/30 21:02:42 by feedme           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	*ft_memrev(void *dst, const void *src, int n)
 {
-	int		i;
+	int	i;
+	int	j;
 
-	i = 0;
-	if (as == NULL)
-		return ;
-	while (*as[i])
+	j = 0;
+	i = n - 1;
+	while (i > -1)
 	{
-		*as[i] = 0;
-		i++;
+		((char *)dst)[j] = ((char *)src)[i];
+		i--;
+		j++;
 	}
-	free(*as);
-	*as = NULL;
+	return (dst);
 }
